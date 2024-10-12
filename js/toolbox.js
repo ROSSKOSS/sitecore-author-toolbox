@@ -13,7 +13,7 @@
  */
 import * as global from "./modules/global.js";
 import { log, loadJsFile, getScItemData } from "./modules/helpers.js";
-import { initDarkMode, detectSwitchDarkMode } from "./modules/dark.js";
+import { initDarkMode, detectSwitchDarkMode, fixGreenItemsInDarkMode } from "./modules/dark.js";
 import { addHelptextIcons } from "./modules/help.js";
 import { showSnackbar } from "./modules/snackbar.js";
 import { checkWorkbox } from "./modules/workbox.js";
@@ -99,6 +99,8 @@ chrome.storage.sync.get((storage) => {
       contentTreeScrollTo();
       initLightbox();
       initIntroScreen();
+      fixGreenItemsInDarkMode();
+      
       if (storage.feature_experimentalui) {
         log("**** Experimental ****", "yellow");
         initAppName(storage, "Content Editor");

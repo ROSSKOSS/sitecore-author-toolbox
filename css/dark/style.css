@@ -1,9 +1,7 @@
 body.satDark {
   border: none;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--black5) !important;
+  background-color: #2d2d2d !important;
+  --blue: #024180;
 }
 
 body.satDark .sc-globalHeader {
@@ -631,11 +629,6 @@ body.satDark .scMenuItemHotkey {
   filter: invert(1) !important;
 }
 
-body.satDark .scMenuPanelItem_Hover div b,
-body.satDark .scMenuPanelItem_Hover div {
-  color: var(--white) !important;
-}
-
 body.satDark .scMenuItemIcon,
 body.satDark .scMenuItemCaption,
 body.satDark .scMenuItemHotkey,
@@ -673,7 +666,7 @@ body.satDark .scMenuDividerHotkey {
 
 body.satDark .versionNumSelected,
 body.satDark .scMenuPanelItemSelected {
-  background-color: var(--darkblue) !important;
+  background-color: var(--black3) !important;
 }
 
 body.satDark .scMenuPanelItemSelected_Hover > table > tbody > tr > td > div > div > b,
@@ -1055,8 +1048,11 @@ body.satDark #SearchBox.focus {
 /* Content Tree */
 
 body.satDark .scContentTree {
+  padding-bottom: 12px !important; /* Match scrollbar size */
+  padding-right: 12px !important;
   background-color: var(--black1) !important;
   background-image: unset;
+  height: calc(100% - 12px) !important;
 }
 
 body.satDark .scContentTreeNode > img {
@@ -1073,16 +1069,18 @@ body.satDark a.scContentTreeNodeStatic:active {
 body.satDark a.scContentTreeNodeNormal:hover,
 body.satDark a.scContentTreeNodeActive,
 body.satDark a.scContentTreeNodeNormal.scDragHover {
-  background-color: var(--blue);
+  background-color: #404040;
+  border-radius: 5px;
 }
 
 body.satDark a.scContentTreeNodeActive > span {
-  color: rgba(255, 255, 255, 0.7);
+  color: white;
 }
 
 body.satDark a.scContentTreeNodeActive {
   background-color: var(--blue);
-  color: rgba(255, 255, 255, 0.7);
+  color: white;
+  font-weight: 600;
 }
 
 body.satDark .scContentTreeNodeGlyph:hover {
@@ -2108,6 +2106,7 @@ body.satDark a.scEditorHeaderButton {
 body.satDark a.scEditorHeaderButton:hover,
 body.satDark a.scEditorHeaderButton:active {
   background-color: var(--text);
+  color: var(--text) !important;
 }
 
 body.satDark a.scEditorHeaderButton:active {
@@ -2146,7 +2145,7 @@ body.satDark .scEditorSectionCaptionCollapsed {
 }
 
 body.satDark .scEditorFieldLabelDisabled {
-  color: var(--black9);
+  color: var(--grey3);
 }
 
 body.satDark .scEditorFieldLabelAdministrator {
@@ -2195,9 +2194,20 @@ body.satDark .scEditorFieldMarkerBarCellRed {
   border-left-color: #9f1d16 !important;
 }
 
-body.satDark a.scContentButton {
-  color: var(--blue) !important;
-  border-right: 1px solid transparent;
+body.satDark #EditorFrames .scContentButtons a.scContentButton {
+  color: var(--text) !important;
+  background-color: var(--black2);
+
+  border-width: 0px;
+  border-radius: 5px;
+  margin-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+body.satDark #EditorFrames .scContentButtons a.scContentButton:hover {
+  text-decoration: none;
+  background-color: var(--black3);
 }
 
 body.satDark .scContentButtonDisabled {
@@ -2322,6 +2332,7 @@ body.satDark #BTAddNewSearch {
   background-image: url("chrome-extension://__MSG_@@extension_id__/images/edition-magnifier.png"), linear-gradient(to bottom, transparent 0%, transparent 100%) !important;
   background-position: center;
   background-repeat: no-repeat;
+  filter: invert();
 }
 
 body.satDark .t-invert > img {
@@ -2351,7 +2362,6 @@ body.satDark .scEditorTabHeaderActive {
 
 body.satDark .scEditorTabHeaderActive {
   background-color: var(--black1) !important;
-  color: var(--black9) !important;
 }
 
 body.satDark #BTAddNewSearch > .scEditorTabHeaderNormal {
@@ -3297,4 +3307,13 @@ body.satDark .commands-cell {
 
 body.satDark .sort-item {
   border: 1px solid var(--black3);
+}
+
+body.satDark .scContentTreeNodeIcon {
+  filter: brightness(150%);
+  filter: contrast(150%);
+}
+
+body.satDark #SearchPanel .scSearchOptionsButton img {
+  filter: invert();
 }
