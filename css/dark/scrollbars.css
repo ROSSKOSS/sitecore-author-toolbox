@@ -1,32 +1,22 @@
-/* Style for the entire scrollbar */
-body.satDark ::-webkit-scrollbar {
-  width: 12px !important; /* Adjust the width of the scrollbar */
-  height: 12px !important; /* Horizontal scrollbar height */
+body.satDark *::-webkit-scrollbar {
+  width: 12px !important;
+  height: 12px !important;
 }
 
-/* Track (background of the scrollbar) */
-body.satDark ::-webkit-scrollbar-track {
-  background: #2d2d2d !important; /* Dark background */
+body.satDark *::-webkit-scrollbar-track {
+  background: #2d2d2d !important;
 }
 
-/* Thumb (draggable part of the scrollbar) */
-body.satDark ::-webkit-scrollbar-thumb {
-  background-color: #5e5e5e !important; /* Lighter gray for contrast */
-  border-radius: 10px !important; /* Rounded scrollbar thumb */
-  border: 2px solid #2d2d2d !important; /* Space between thumb and edge */
+body.satDark *::-webkit-scrollbar-thumb {
+  background-color: #5e5e5e !important;
+  border-radius: 10px !important;
+  border: 2px solid #2d2d2d !important;
 }
 
-/* Hover effect for the thumb */
-body.satDark ::-webkit-scrollbar-thumb:hover {
-  background-color: #9d9d9d !important; /* Lighter when hovering */
+body.satDark *::-webkit-scrollbar-thumb:hover {
+  background-color: #9d9d9d !important;
 }
 
-body.satDark ::-webkit-scrollbar-corner {
-  background-color: #2d2d2d !important; /* Ensures the corner matches the scrollbar track */
-}
-
-/* Firefox scrollbar styles */
-html body.satDark {
-  scrollbar-width: thin !important;
-  scrollbar-color: #5e5e5e #2d2d2d !important;
+body.satDark *::-webkit-scrollbar-corner {
+  background-color: #2d2d2d !important;
 }
