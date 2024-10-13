@@ -1,7 +1,7 @@
 import * as global from "./global.js";
 import { loadCssFile } from "./helpers.js";
 
-export { currentColorScheme, initDarkMode, initDarkModeEditor, detectSwitchDarkMode, fixGreenItemsInDarkMode };
+export { currentColorScheme, initDarkMode, initDarkModeEditor, detectSwitchDarkMode };
 
 /**
  * Get active OS color Scheme
@@ -83,16 +83,5 @@ const detectSwitchDarkMode = (storage) => {
         scheme.matches ? document.body.classList.add("satDark") : document.body.classList.remove("satDark");
       }
     });
-  }
-};
-
-const fixGreenItemsInDarkMode = () => {
-  if (document.body.classList.contains("satDark")) {
-    let elements = document.querySelectorAll('.scContentTreeNodeNormal > [style="color:green"]');
-    if (elements) {
-      elements.forEach((element) => {
-        element.style = "color:lightgreen";
-      });
-    }
   }
 };

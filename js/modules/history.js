@@ -4,6 +4,7 @@ import * as global from "./global.js";
 import { log, exeJsCode } from "./helpers.js";
 import { sitecoreAuthorToolbox } from "./contenteditor.js";
 import { initSvgAnimation } from "./experimentalui.js";
+import { runGreyItemsUpdateInterval } from "./darkVisuals.js";
 
 export { resumeFromWhereYouLeftOff, historyNavigation };
 
@@ -52,9 +53,13 @@ const resumeFromWhereYouLeftOff = (storage) => {
         log("[Read " + storage.scSource + "] Version : " + storage.scVersion, "beige");
         log("*** Redirection ***", "yellow");
         document.title = "Resuming...";
+
         setTimeout(function () {
           exeJsCode(`scForm.invoke("item:load(id=${storage.scItemID},language=${storage.scLanguage},version=${storage.scVersion})");`);
         }, 500);
+
+        runGreyItemsUpdateInterval();
+
         //Add security if still not visible after 8s
         setTimeout(function () {
           if (document.querySelector("#EditorFrames")) {

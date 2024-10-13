@@ -1081,6 +1081,7 @@ body.satDark a.scContentTreeNodeActive {
   background-color: var(--blue);
   color: white;
   font-weight: 600;
+  width: auto;
 }
 
 body.satDark .scContentTreeNodeGlyph:hover {
