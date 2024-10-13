@@ -61,6 +61,7 @@ import {
 } from "./modules/experienceeditor.js";
 import { initHorizon } from "./modules/horizon.js";
 import { initTabSections } from "./modules/tabs.js";
+import { initCompactMode } from "./modules/compact.js";
 /**
  * Get all user's settings from chrome storage
  */
@@ -80,6 +81,7 @@ chrome.storage.sync.get((storage) => {
     keyEventListeners();
     initUserMenu(storage);
     initDarkMode(storage);
+    initCompactMode();
     detectSwitchDarkMode(storage);
     /*
      **********************

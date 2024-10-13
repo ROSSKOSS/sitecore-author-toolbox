@@ -1,0 +1,58 @@
+.compactMode .scRibbonNavigatorButtonsGroupHeader {
+  display: none;
+}
+
+.compactMode .scRibbonNavigatorButtons .scRibbonNavigatorButtonsContextualGroupHeader {
+  display: none;
+}
+
+.compactMode #SystemMenu {
+  top: 0;
+}
+
+.compactMode .scRibbonToolbar .caption {
+  display: none;
+}
+
+.compactMode .scRibbonToolbar .chunk,
+.compactMode .scRibbonToolbar .contextualChunk {
+  height: 60px;
+}
+
+.compactMode .scRibbonToolbar .panel {
+  padding-top: 5px !important;
+}
+
+.compactMode .scRibbonToolbar .scRibbonToolbarStrip,
+.compactMode .scRibbonToolbar .scRibbonToolbarContextualStrip {
+  min-height: 60px !important;
+}
+
+.compactMode #ContentEditor #EditorTabs .scRibbonEditorTabActive,
+.compactMode #ContentEditor #EditorTabs .scRibbonEditorTabNormal {
+  margin-top: 0px !important;
+}
+
+.compactMode #ContentEditor #EditorTabs .scEditorTabControlsHolder {
+  margin-top: 5px !important;
+}
+
+.compactMode #ContentEditor #EditorTabs {
+  height: 40px !important;
+}
+
+.compactMode #ContentEditor #EditorFrames {
+  margin-top: 40px !important;
+}
+
+.compactMode #ContentEditor #EditorFrames .scEditorHeader {
+  padding: 15px !important;
+}
+
+.compactMode #SearchPanel {
+  display: none;
+}
+
+.compactMode .scDockBottom {
+  display: none;
+}
