@@ -48,6 +48,13 @@ const instantSearch = () => {
       }, 200);
     });
 
+    document.addEventListener("keyup", (event) => {
+      if (event.shiftKey && event.key === "F") {
+        scInstantSearch.focus();
+        preventDefault();
+      }
+    });
+
     // On focus
     scInstantSearch.addEventListener("focus", (event) => {
       const chars = event.target.value.length;

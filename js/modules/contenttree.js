@@ -2,15 +2,17 @@
 
 import * as global from "./global.js";
 import { initStorageFeature } from "./helpers.js";
-
+import { fixGreenItemsInDarkMode, fixGreyItemsInDarkMode } from "./darkVisuals.js";
 export { initAutoExpandTree, initTreeGutterTooltips };
-
+import { log, exeJsCode } from "./helpers.js";
 /**
  * Auto Expand Tree
  */
 const initAutoExpandTree = (storage) => {
   storage.feature_autoexpand = initStorageFeature(storage.feature_autoexpand, false);
   storage.feature_autoexpandcount = initStorageFeature(storage.feature_autoexpandcount, true);
+  fixGreenItemsInDarkMode();
+  fixGreyItemsInDarkMode();
 
   if (storage.feature_autoexpand && document.querySelector(".scContentTree")) {
     //Content tree
@@ -42,11 +44,13 @@ const initAutoExpandTree = (storage) => {
         //Content Tree
         if (event.target.matches(".scContentTreeNodeGlyph")) {
           let glyphId = event.target.id;
-
           setTimeout(function () {
             if (document && glyphId) {
               let subTreeDiv = document.querySelector("#" + glyphId).nextSibling.nextSibling.nextSibling;
               if (subTreeDiv) {
+                fixGreenItemsInDarkMode(subTreeDiv);
+                fixGreyItemsInDarkMode(subTreeDiv);
+
                 let newNodes = subTreeDiv.querySelectorAll(".scContentTreeNode");
                 newNodes.length == 1 ? newNodes[0].querySelector(".scContentTreeNodeGlyph").click() : false;
               }

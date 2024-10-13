@@ -1,4 +1,4 @@
-.scCheckBox {
+/* .scCheckBox {
   position: relative;
   display: inline-block;
   margin-right: 8px;
@@ -62,4 +62,4 @@
 }
 .scContentControlCheckbox:checked + .scContentControlCheckboxLabel::after {
   left: 21px;
-}
+} */
