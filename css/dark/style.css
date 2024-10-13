@@ -1,3 +1,7 @@
+:root {
+  color-scheme: dark;
+}
+
 body.satDark {
   border: none;
   background-color: #2d2d2d !important;
@@ -173,6 +177,41 @@ body.satDark #Cancel {
   color: var(--white);
 }
 
+body.satDark #CancelButton:hover,
+body.satDark #Cancel:hover {
+  color: var(--white) !important;
+  background: var(--black4) !important;
+}
+
+body.satDark .sc-dialogFooter-content-buttons .btn-primary,
+body.satDark .sc-navigation-menu .btn-primary {
+  -webkit-box-shadow: inset 0 0px #5dbadf;
+  box-shadow: inset 0 0px #5dbadf;
+}
+
+body.satDark .sc-dialogFooter-content-buttons .btn-primary:hover,
+body.satDark .sc-navigation-menu .btn-primary:hover {
+  background: var(--lightblue) !important;
+}
+
+body.satDark .sc-dialogFooter-content-buttons .btn-default {
+  background: var(--black3) !important;
+  color: var(--white) !important;
+  -webkit-box-shadow: inset 0 0px #5dbadf;
+  box-shadow: inset 0 0px #5dbadf;
+  border-color: transparent;
+}
+
+body.satDark .sc-dialogFooter-content-buttons .btn-default .sc-button-text {
+  color: var(--white) !important;
+}
+
+body.satDark .sc-dialogFooter-content-buttons .btn-default:hover {
+  color: var(--white) !important;
+  background: var(--black4) !important;
+  border-color: transparent;
+}
+
 body.satDark .scButton,
 body.satDark input[type="submit"] {
   box-shadow: none;
@@ -183,8 +222,8 @@ body.satDark input[type="submit"] {
 
 body.satDark .scButton:hover,
 body.satDark input[type="submit"]:hover {
-  border-color: var(--black) !important;
-  background-color: var(--black) !important;
+  border-color: var(--lightblue) !important;
+  background-color: var(--lightblue) !important;
   color: var(--blue) !important;
 }
 
@@ -550,7 +589,7 @@ body.satDark .scContentHeaderLabel {
 }
 
 body.satDark a.scHyperlinkButton {
-  color: var(--blue);
+  color: var(--lightblue);
   border-right: 1px solid var(--text) !important;
 }
 
@@ -1070,6 +1109,7 @@ body.satDark a.scContentTreeNodeNormal:hover,
 body.satDark a.scContentTreeNodeActive,
 body.satDark a.scContentTreeNodeNormal.scDragHover {
   background-color: #404040;
+  padding-bottom: 5px;
   border-radius: 5px;
 }
 
@@ -1081,7 +1121,7 @@ body.satDark a.scContentTreeNodeActive {
   background-color: var(--blue);
   color: white;
   font-weight: 600;
-  width: auto;
+  width: auto !important;
 }
 
 body.satDark .scContentTreeNodeGlyph:hover {
@@ -1780,11 +1820,11 @@ body.satDark .lang_ja_jp .scRibbonToolbarContextualStrip {
 }
 
 body.satDark .scRibbon .chunk .caption {
-  color: #555 !important;
+  color: var(--textFaded) !important;
 }
 
 body.satDark .scRibbon .chunk .caption a {
-  color: #666 !important;
+  color: var(--textFaded) !important;
 }
 
 body.satDark .scRibbon .chunk .caption .glyph {
@@ -2114,10 +2154,22 @@ body.satDark a.scEditorHeaderButton:active {
   box-shadow: inset 0 1px 3px #ccc;
 }
 
+body.satDark .scEditorHeaderNavigatorField,
+body.satDark a.scEditorHeaderNavigatorSection {
+  background-color: var(--black2) !important;
+  color: var(--text);
+}
+
+body.satDark a.scEditorHeaderNavigatorSection {
+  background-color: var(--black3) !important;
+  font-weight: 600;
+  border-top: 1px solid var(--black3) !important;
+}
+
 body.satDark .scEditorHeaderNavigatorField:hover,
 body.satDark a.scEditorHeaderNavigatorSection:hover {
-  background-color: var(--blue) !important;
-  color: var(--black3);
+  background-color: var(--black4) !important;
+  color: var(--text);
 }
 
 body.satDark a.scEditorHeaderNavigatorSection {
@@ -2126,6 +2178,7 @@ body.satDark a.scEditorHeaderNavigatorSection {
 
 body.satDark .scEditorPanel {
   background-color: var(--black1) !important;
+  margin-right: 0px;
 }
 
 body.satDark .scEditorPanelCell {
@@ -2377,6 +2430,7 @@ body.satDark .scEditorTabHeaderNormal {
 
 body.satDark .scValidatorPanel {
   background: var(--black1) !important;
+  display: none;
 }
 
 /* search */
@@ -2389,10 +2443,14 @@ body.satDark .scSearchCategory {
   border-right: 1px solid var(--black3);
 }
 
+body.satDark .scSearchLink {
+  color: var(--text);
+}
+
 body.satDark .scSearchLink:hover,
 body.satDark .scSearchLink:active {
   background-color: var(--black1);
-  color: #cccccc;
+  color: var(--text);
 }
 
 body.satDark .scSearchLinkDetails {
@@ -2582,7 +2640,7 @@ body.satDark #scEditorTabs {
 body.satDark #scEditorTabs > ul > li {
   border: 1px solid var(--black2);
   background: var(--black2);
-  color: var(--black9);
+  color: var(--text);
 }
 body.satDark #scEditorTabs > ul > li:not(.scEditorTabEmpty):hover {
   color: var(--black6);
@@ -2662,9 +2720,12 @@ body.satDark .scCalendarYearRightCell:hover {
   background: #e3e3e3;
 }
 
-body.satDark .scOverlay,
-body.satDark .ui-widget-overlay {
-  background: rgba(255, 255, 255, 0.2) !important;
+body.satDark .ui-widget-overlay:after {
+  visibility: hidden;
+}
+
+body.satDark:has(.ui-widget-overlay) {
+  background-color: transparent !important;
 }
 
 body.satDark #SettingsPane {
@@ -2759,6 +2820,11 @@ body.satDark .sc-controlpanel-box-content {
 body.satDark .sc-controlpanel-box-content li {
   border-bottom: 1px solid var(--black4) !important;
 }
+
+body.satDark .sc-controlpanel-box-content li a {
+  color: var(--text);
+}
+
 body.satDark .sc-applicationHeader-row2 {
   background-color: var(--black2) !important;
   border-bottom: 1px solid var(--black4);
@@ -3317,4 +3383,70 @@ body.satDark .scContentTreeNodeIcon {
 
 body.satDark #SearchPanel .scSearchOptionsButton img {
   filter: invert();
+}
+
+body.satDark .dynatree-title {
+  color: var(--text) !important;
+}
+
+body.satDark .dynatree-title:hover {
+  background-color: var(--black6) !important;
+}
+
+body.satDark .dynatree-active .dynatree-title {
+  background-color: var(--blue) !important;
+}
+
+body.satDark .dynatree-expander {
+  filter: invert(1) brightness(50%);
+}
+
+body.satDark .dynatree-expander:hover {
+  filter: none;
+}
+
+body.satDark .sc-dialogContent-title {
+  background-color: #7c1712;
+}
+
+body.satDark .sc-smartpanel,
+body.satDark .sc-smartpanel-header {
+  background-color: var(--black3);
+  color: var(--text);
+}
+
+body.satDark .sc-dialogContent-toolbar .sc-dialogContent-toolbar-actions button {
+  border-width: 0px;
+  background-image: none;
+  background-color: var(--black3);
+  color: white;
+  box-shadow: none;
+}
+
+body.satDark .sc-dialogContent-toolbar .sc-dialogContent-toolbar-actions button:hover {
+  background-color: var(--black4);
+}
+
+body.satDark .sc-dialogContent-toolbar .sc-dialogContent-toolbar-actions button div {
+  filter: invert(1);
+}
+
+body.satDark #SearchResultsHeader {
+  color: var(--text);
+}
+
+body.satDark .scElementHover.elementPadding,
+body.satDark .scElementHover.elementPadding a {
+  color: var(--text) !important;
+  background-color: var(--black2) !important;
+}
+
+body.satDark .scElementHover.elementPadding:hover,
+body.satDark .scElementHover.elementPadding:hover a {
+  background-color: var(--black3) !important;
+  color: var(--text) !important;
+}
+
+body.satDark .sc-launchpad-item:active .icon {
+  box-shadow: none;
 }

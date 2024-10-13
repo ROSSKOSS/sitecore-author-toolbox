@@ -189,6 +189,9 @@ const initLanguageMenuCE = (storage) => {
           } else if (tdversion[0] != "0") {
             temp = item2.getElementsByTagName("div");
             temp[2].setAttribute("style", "background-color: yellow; display: initial; padding: 0px 3px; color: #000000 !important");
+          } else {
+            temp = item2.getElementsByTagName("div");
+            temp[2].setAttribute("style", "color: var(--text) !important");
           }
 
           tdlanguage = findCountryName(tdlanguage);
