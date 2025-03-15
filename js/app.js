@@ -5,11 +5,17 @@
  * https://uquaisse.io
  * ugo.quaisse@gmail.com
  */
+
+const windowLocationHref = window.location.href.replace(/&amp;/g, "&").toLowerCase();
+const isSitecore = windowLocationHref.includes("/sitecore/");
+
 (async () => {
-  const contentScript = await import(chrome.runtime.getURL("js/toolbox.min.js"));
   try {
-    contentScript.main();
+    if (isSitecore) {
+      const contentScript = await import(chrome.runtime.getURL("js/toolbox.min.js"));
+      contentScript.main();
+    }
   } catch (e) {
-    //e
+    console.warn("SAT Error!");
   }
 })();

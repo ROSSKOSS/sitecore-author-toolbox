@@ -30,13 +30,16 @@ body.contentEditor:after {
   width: 96px;
   position: absolute;
   background: transparent url("chrome-extension://__MSG_@@extension_id__/images/sc-spinner32.gif") no-repeat center center;
-  background-color: var(--black4); /*TODO: Figure out how to apply only to dark*/
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.175);
   z-index: auto;
   transition: all ease-in-out 0.1s;
   transition-delay: 0.1s;
   will-change: opacity;
+
+  &.satDark {
+    background-color: var(--black4);
+  }
 }
 
 body.satExtension.contentEditor {
