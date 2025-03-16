@@ -10,21 +10,25 @@
   top: 0;
 }
 
+.compactMode #ContentEditorForm .scRibbonToolbar {
+  display: none;
+}
+
 .compactMode .scRibbonToolbar .caption {
   display: none;
 }
 
-.compactMode .scRibbonToolbar .chunk,
-.compactMode .scRibbonToolbar .contextualChunk {
+.compactMode #ContentEditorForm .scRibbonToolbar .chunk,
+.compactMode #ContentEditorForm .scRibbonToolbar .contextualChunk {
   height: 60px;
 }
 
-.compactMode .scRibbonToolbar .panel {
+.compactMode #ContentEditorForm .scRibbonToolbar .panel {
   padding-top: 5px !important;
 }
 
-.compactMode .scRibbonToolbar .scRibbonToolbarStrip,
-.compactMode .scRibbonToolbar .scRibbonToolbarContextualStrip {
+.compactMode #ContentEditorForm .scRibbonToolbar .scRibbonToolbarStrip,
+.compactMode #ContentEditorForm .scRibbonToolbar .scRibbonToolbarContextualStrip {
   min-height: 60px !important;
 }
 
@@ -46,7 +50,7 @@
 }
 
 .compactMode #ContentEditor #EditorFrames .scEditorHeader {
-  padding: 15px !important;
+  display: none;
 }
 
 .compactMode #SearchPanel {
@@ -55,4 +59,17 @@
 
 .compactMode .scDockBottom {
   display: none;
+}
+
+.compactMode .scEditorSectionPanelCell {
+  padding: 0px;
+}
+
+.compactMode .scEditorSectionPanelCell .scEditorQuickInfo tr {
+  line-height: 23px;
+}
+
+.compactMode .scEditorSections .scEditorSectionPanelCell {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

@@ -12,10 +12,9 @@ const isSitecore = windowLocationHref.includes("/sitecore/");
 (async () => {
   try {
     if (isSitecore) {
+      console.log("SAT: Loading..." + window.satHasRun);
       const contentScript = await import(chrome.runtime.getURL("js/toolbox.min.js"));
-      contentScript.main();
+      contentScript?.main();
     }
-  } catch (e) {
-    console.warn("SAT Error!");
-  }
+  } catch (e) {}
 })();

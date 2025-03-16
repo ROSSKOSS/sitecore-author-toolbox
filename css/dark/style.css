@@ -1,4 +1,4 @@
-:root:has(body.satDark) {
+:root {
   color-scheme: dark;
 }
 
@@ -6,6 +6,12 @@ body.satDark {
   border: none;
   background-color: #2d2d2d !important;
   --blue: #024180;
+}
+
+body.satDark a,
+a:active,
+a:visited {
+  color: var(--text);
 }
 
 body.satDark .sc-globalHeader {
@@ -222,9 +228,9 @@ body.satDark input[type="submit"] {
 
 body.satDark .scButton:hover,
 body.satDark input[type="submit"]:hover {
-  border-color: var(--lightblue) !important;
-  background-color: var(--lightblue) !important;
-  color: var(--blue) !important;
+  border-color: var(--blue) !important;
+  background-color: var(--blue) !important;
+  color: var(--text) !important;
 }
 
 body.satDark .scButton:active,
@@ -260,16 +266,16 @@ body.satDark input[type="submit"].scButtonPrimary {
 body.satDark .scButtonPrimary:hover,
 body.satDark input[type="submit"].scButtonPrimary:hover {
   color: var(--text) !important;
-  border-color: var(--lightblue);
-  background-color: var(--lightblue);
+  border-color: var(--lighterblue) !important;
+  background-color: var(--lighterblue) !important;
   background-image: none;
 }
 
 body.satDark .scButtonPrimary:active,
 body.satDark input[type="submit"].scButtonPrimary:active {
   color: var(--text) !important;
-  border-color: var(--lightblue);
-  background-color: var(--lightblue);
+  border-color: var(--lighterblue);
+  background-color: var(--lighterblue);
   background-image: none;
 }
 
@@ -720,6 +726,7 @@ body.satDark .scDarkBorderCell {
 body.satDark .scScrollbox {
   background-color: var(--black1) !important;
   border-color: var(--black2) !important;
+  color: var(--text);
 }
 
 body.satDark .scScrollbox.scContentControlTree {
@@ -929,7 +936,7 @@ body.satDark .scRollOver2_Hover {
 
 body.satDark .scRollover,
 body.satDark .scRollover_Hover {
-  color: var(--blue);
+  color: var(--lightblue);
 }
 
 body.satDark .scSectionLeft {
@@ -1023,10 +1030,9 @@ body.satDark .scTab_Hover {
 }
 body.satDark .scTabActive,
 body.satDark .scTabActive_Hover {
-  background-color: var(--black1) !important;
+  background-color: var(--black2) !important;
   color: var(--text);
-  border-top: 1px solid var(--black1) !important;
-  border-right: 1px solid var(--black1) !important;
+  border: 1px solid var(--black4) !important;
 }
 
 body.satDark .scTab_Hover {
@@ -1046,16 +1052,23 @@ body.satDark .scVerticalTabstrip .scVerticalTabs a:last-child {
   border-bottom: 1px solid var(--black3) !important;
 }
 
-body.satDark .scVerticalTabstrip .scVerticalTabs a.active,
-body.satDark .scVerticalTabstrip .scVerticalTabs a.active:hover {
-  background-color: var(--black4);
-  color: var(--text);
-  border: 1px solid var(--black4);
+body.satDark .scVerticalTabstrip .scVerticalTabs a {
+  color: var(--text) !important;
 }
 
 body.satDark .scVerticalTabstrip .scVerticalTabs a:hover {
-  background-color: #207da2 !important;
-  color: var(--black1) !important;
+  background-color: var(--darkblue);
+  color: var(--text) !important;
+}
+
+body.satDark .scVerticalTabstrip .scVerticalTabs a.active {
+  background-color: var(--blue);
+  color: var(--text);
+  border: 1px solid var(--black4) !important;
+}
+
+body.satDark .scVerticalTabstrip .scVerticalTabs a.active:hover {
+  background-color: var(--lightblue) !important;
 }
 
 body.satDark .scViewerHeadline {
@@ -1250,7 +1263,7 @@ body.satDark .sc-text-bold {
 body.satDark .scListControl > tbody:first-child > tr:first-child,
 body.satDark .scListControl > thead,
 body.satDark .scListControlHead {
-  background-color: #5e5e5e !important;
+  background-color: var(--black1) !important;
   color: var(--white);
 }
 
@@ -1318,7 +1331,7 @@ body.satDark .scMessageBar.scError {
 }
 
 body.satDark .scMessageBar.scInformation {
-  background-color: #040b47 !important;
+  background-color: var(--blue) !important;
 }
 
 body.satDark .scMessageBarIcon {
@@ -1354,19 +1367,20 @@ body.satDark .Metro {
 }
 body.satDark .reMode_html span,
 body.satDark .reMode_selected.reMode_html span {
-  color: var(--black3) !important;
+  color: var(--text) !important;
 }
 body.satDark .reLayoutWrapper {
   overflow: hidden;
 }
 body.satDark .reContentCell iframe {
-  filter: invert(1) !important;
+  /* filter: invert(1) !important; */
 }
 body.satDark .Metro.RadEditor .reContentCell {
-  background-color: transparent;
+  background-color: white;
 }
 body.satDark .Row {
   background-color: var(--black2) !important;
+  color: var(--text);
 }
 body.satDark .Row:nth-child(odd) {
   background-color: var(--black3) !important;
@@ -1374,6 +1388,17 @@ body.satDark .Row:nth-child(odd) {
 body.satDark .Row:hover,
 body.satDark .Row:nth-child(odd):hover {
   background-color: var(--black) !important;
+}
+
+body.satDark .SelectedRow {
+  background-color: var(--blue) !important;
+  color: var(--text);
+}
+
+body.satDark .SelectedRow td.DataCell {
+  background-color: var(--blue) !important;
+  color: var(--text);
+  border: 1px solid var(--lightblue);
 }
 
 body.satDark a.scTileItem {
@@ -2568,9 +2593,9 @@ body.satDark .Metro.RadEditor .reEditorModes a.reMode_selected:hover {
 }
 
 body.satDark .Metro.RadEditor .reEditorModes .reMode_selected {
-  background-color: var(--black1);
+  background-color: var(--black1) !important;
   color: var(--white);
-  border: 1px solid var(--black1);
+  border: 1px solid var(--black1) !important;
 }
 
 body.satDark #EditorBottom {
@@ -2744,10 +2769,23 @@ body.satDark .scEditorSections {
 body.satDark #FooterRow {
   background: var(--black2) !important;
 }
-body.satDark #Renderings,
-body.satDark #placeholders {
-  color: var(--black5);
+body.satDark #Renderings {
+  color: var(--text);
 }
+
+body.satDark #Renderings div:hover {
+  background-color: var(--black4);
+}
+
+body.satDark #Renderings table div:hover {
+  background-color: var(--black1);
+}
+
+body.satDark #Renderings div table {
+  background-color: var(--black1);
+  margin-left: 2px;
+}
+
 body.satDark .scEditorInformation {
   background-color: var(--lightblue) !important;
 }
@@ -3299,6 +3337,11 @@ body.satDark .scFlexContent {
   background-color: var(--black2) !important;
 }
 
+body.satDark .scFlexContent #SelectOption,
+body.satDark .scFlexContent #SearchOption {
+  background-color: var(--black1);
+}
+
 body.satDark .sc-text-largetitle {
   color: var(--text);
 }
@@ -3449,4 +3492,22 @@ body.satDark .scElementHover.elementPadding:hover a {
 
 body.satDark .sc-launchpad-item:active .icon {
   box-shadow: none;
+}
+
+body.satDark .scTableSection {
+  background-color: var(--verydarkblue);
+}
+
+body.satDark .scTableSection .scTableSectionName {
+  background-color: var(--ultradarkblue) !important;
+  color: var(--translucent-default);
+  border-color: var(--blue);
+}
+
+body.satDark .scTableHeader {
+  background-color: var(--black1);
+}
+
+body.satDark .scTableFieldName {
+  box-shadow: inset 2px 0px var(--verydarkblue);
 }

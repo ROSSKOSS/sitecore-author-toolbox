@@ -43,6 +43,7 @@ const initDarkMode = (storage) => {
     navigator.platform.indexOf("Win") == 0 ? loadCssFile("css/dark/scrollbars.min.css") : false;
     //Set new background color
     document.documentElement.style.setProperty("--background", "#000");
+    // document.documentElement.style.setProperty("background-color", "#000");
   } else if (storage.feature_darkmode && storage.feature_darkmode_auto && currentColorScheme() == "light") {
     document.body ? document.body.classList.remove("satDark") : false;
     if (storage.feature_darkmode_auto && document.querySelector(".darkmodeRadio[value='auto']")) {

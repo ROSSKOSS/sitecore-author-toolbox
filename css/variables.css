@@ -35,10 +35,14 @@
 
   --experimentalBackground: #f7f7f7;
 
+  --translucent-default: #ffffffa8;
+
   --lightblue: #1e81ef;
+  --lighterblue: #1488fc;
   --blue: #0b84ff;
   --darkblue: #034c9e;
   --verydarkblue: #002f64;
+  --ultradarkblue: #001321;
 
   --lightgreen: #8ce99a;
   --green: #2bc37c;

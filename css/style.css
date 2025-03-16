@@ -2646,3 +2646,7 @@ body.satExtension div.scExpEditorTabControlsHolder .scEditorHeaderButton > img {
   transition: transform 0.2s ease-in-out;
   filter: invert(1);
 }
+
+body.satExtension .scFormDialogContent .optionButtons {
+  margin: 5px 5px 0 0;
+}

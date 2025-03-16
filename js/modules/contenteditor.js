@@ -17,7 +17,7 @@ import { enhancedTreeSearch } from "./search.js";
 import { initTranslateMode } from "./translate.js";
 import { showSnackbarSite } from "./snackbar.js";
 
-export { sitecoreAuthorToolbox, initCharsCount, initCheckboxes, initDateTimeField, initPasswordField, refreshContentEditor, openFolderTab, contentTreeScrollTo, keyEventListeners, resetContentEditor };
+export { sitecoreAuthorToolbox, initCharsCount, initCheckboxes, initDateTimeField, initPasswordField, refreshContentEditor, openFolderTab, contentTreeScrollTo, keyEventListeners, resetContentEditor, compact };
 
 /*
  * Main function executed when the Content Editor refreshes
@@ -86,7 +86,7 @@ const sitecoreAuthorToolbox = (storage) => {
   enhancedTreeSearch(storage);
   changeTitleWindow(storage);
   showSnackbarSite(storage, ScItem);
-
+  compact();
   /**
    * Insert Flag (In Active Tab) + Version Number
    */
@@ -459,6 +459,7 @@ const refreshContentEditor = (storage) => {
 
     //Executed everytime the editor is refreshed
     mutations.forEach(function (e) {
+      console.log("REFRESH!");
       "attributes" == e.type && sitecoreAuthorToolbox(storage);
     });
   });
@@ -504,4 +505,14 @@ const keyEventListeners = () => {
 const resetContentEditor = () => {
   let sitecoreForm = document.querySelector("form[action*='/sitecore/']:not(#LoginForm)");
   sitecoreForm ? sitecoreForm.setAttribute("style", "filter:opacity(1)") : false;
+};
+
+const compact = () => {
+  setTimeout(() => {
+    let toolbar = document.querySelector("#RibbonPanel .scRibbonToolbar");
+    toolbar.setAttribute("style", "display:none");
+
+    let ribbonNavButtons = document.querySelector("#RibbonPanel .scRibbonNavigatorButtons .scRibbonNavigatorButtonsGroupButtons");
+    ribbonNavButtons.addEventListener("click", function () {});
+  }, 1000);
 };
