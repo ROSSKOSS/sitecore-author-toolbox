@@ -17,7 +17,7 @@ import { enhancedTreeSearch } from "./search.js";
 import { initTranslateMode } from "./translate.js";
 import { showSnackbarSite } from "./snackbar.js";
 
-export { sitecoreAuthorToolbox, initCharsCount, initCheckboxes, initDateTimeField, initPasswordField, refreshContentEditor, openFolderTab, contentTreeScrollTo, keyEventListeners, resetContentEditor, compact };
+export { sitecoreAuthorToolbox, initCharsCount, initCheckboxes, initDateTimeField, initPasswordField, refreshContentEditor, openFolderTab, contentTreeScrollTo, keyEventListeners, resetContentEditor, compact, changeTitleWindow };
 
 /*
  * Main function executed when the Content Editor refreshes
@@ -84,7 +84,7 @@ const sitecoreAuthorToolbox = (storage) => {
   initPasswordField(storage);
   initTranslateMode(storage);
   enhancedTreeSearch(storage);
-  changeTitleWindow(storage);
+  changeTitleWindow();
   showSnackbarSite(storage, ScItem);
   compact();
   /**
@@ -356,14 +356,36 @@ const initCopyToClipboard = (storage) => {
 /*
  * Change title of browser tab / window
  */
-const changeTitleWindow = (storage) => {
-  storage.feature_contenteditor == undefined ? (storage.feature_contenteditor = true) : false;
-  if (storage.feature_contenteditor) {
-    let ScItem = getScItemData();
-    ScItem.name ? (window.document.title = "" + ScItem.name.capitalize() + " (" + ScItem.language.toUpperCase() + ")") : false;
-    ScItem.name && document.querySelector(".titleBarText") ? (document.querySelector(".titleBarText").innerText = "" + ScItem.name.capitalize() + " (" + ScItem.language.toUpperCase() + ")") : false;
+const changeTitleWindow = () => {
+  const brands = ["mbf", "cerave", "mdc"];
+  const envs = ["dev", "uat", "prd"];
+
+  const locationUrl = window.location.hostname;
+  const currentBrand = brands.find((brand) => locationUrl.includes(brand)) || "";
+  const currentEnv = envs.find((env) => locationUrl.includes(env)) || "";
+
+  const siteNames = {
+    mbf: "MB",
+    cerave: "CER",
+    mdc: "SDC/MDC",
+  };
+
+  const envNames = {
+    dev: "DEV",
+    uat: "UAT",
+    prd: "PRD",
+  };
+
+  const siteName = (siteNames[currentBrand] || "Sitecore") + "-" + (envNames[currentEnv] || "Local");
+
+  document.title = siteName;
+
+  const titleBarText = document.querySelector(".titleBarText");
+  if (titleBarText) {
+    titleBarText.innerText = siteName;
   }
 };
+
 /*
  * Change style of checkboxes to ios-like switch in editor
  */
@@ -509,10 +531,9 @@ const resetContentEditor = () => {
 
 const compact = () => {
   setTimeout(() => {
-    let toolbar = document.querySelector("#RibbonPanel .scRibbonToolbar");
-    toolbar.setAttribute("style", "display:none");
-
-    let ribbonNavButtons = document.querySelector("#RibbonPanel .scRibbonNavigatorButtons .scRibbonNavigatorButtonsGroupButtons");
-    ribbonNavButtons.addEventListener("click", function () {});
+    // let toolbar = document.querySelector("#RibbonPanel .scRibbonToolbar");
+    // toolbar.setAttribute("style", "display:none");
+    // let ribbonNavButtons = document.querySelector("#RibbonPanel .scRibbonNavigatorButtons .scRibbonNavigatorButtonsGroupButtons");
+    // ribbonNavButtons.addEventListener("click", function () {});
   }, 1000);
 };
